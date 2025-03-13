@@ -1,0 +1,4 @@
+Iniciamos a análise do projeto e decidimos que para o desenvolvimento da API utilizaremos a biblioteca 
+Blueprint, na qual pertence ao prórpio Flask. Acreditamos que com o uso dela a estrutura ficará mais
+organizada, já que poderemos organizar cada parte da aplicação de maneira modular, alem de facilitar
+na sua expansão na medida em que vamos desenvolvendo o projeto ao longo do semestre.
