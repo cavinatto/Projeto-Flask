@@ -1,4 +1,15 @@
-Iniciamos a análise do projeto e decidimos que para o desenvolvimento da API utilizaremos a biblioteca 
+- 13/03/2025 - 
+  Iniciamos a análise do projeto e decidimos que para o desenvolvimento da API utilizaremos a biblioteca 
 Blueprint, na qual pertence ao prórpio Flask. Acreditamos que com o uso dela a estrutura ficará mais
-organizada, já que poderemos organizar cada parte da aplicação de maneira modular, alem de facilitar
+organizada, já que poderemos organizar cada parte da aplicação de maneira modular, além de facilitar
 na sua expansão na medida em que vamos desenvolvendo o projeto ao longo do semestre.
+
+  No momento, iremos manter os dados armazenados em listas na própria memória do servidor, onde cada
+entidade possui um número de ID único gerado automaticamente ao criar um novo registro. Com isso
+enfrentaremos um problema de armazenamento, pois como estão sendo utilizadas listas, os dados sempre
+serão apagados quando o servidor for reiniciado. Porém, futuramente, essas limitações serão resolvidas
+com a implementação de um banco de dados.
+
+  Durante o desenvolvimento do CRUD do professor não enfrentamos grandes problemas pois optamos pelo caminho
+mais simples (armazenamento em listas) e como tinhamos uma ideia estruturada de como desennvolver o CRUD,
+só foi necessário "traduzir" ela para python.
