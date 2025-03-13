@@ -6,18 +6,18 @@ professores = []
 turmas = []
 alunos = []
 
-#Professores - READ
-@bp.route('/professores', methods=['GET'])
-def get_professores():
-    return jsonify(professores)
-
-# CREATE
+# Lista de Professores - CREATE
 @bp.route('/professores', methods=['POST'])
 def add_professores():  
     data = request.json
     novo_professor = {"id": len(professores) + 1, "nome": data["nome"]}
     professores.append(novo_professor)
     return jsonify(novo_professor), 201
+
+#Professores - READ
+@bp.route('/professores', methods=['GET'])
+def get_professores():
+    return jsonify(professores)
 
 # UPDATE
 bp.route('/professores/<int:professor_id>', methods=['PUT'])
