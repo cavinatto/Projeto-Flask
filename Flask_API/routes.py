@@ -14,7 +14,7 @@ def add_professores():
     professores.append(novo_professor)
     return jsonify(novo_professor), 201
 
-#Professores - READ
+# READ
 @bp.route('/professores', methods=['GET'])
 def get_professores():
     return jsonify(professores)
