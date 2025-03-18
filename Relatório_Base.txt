@@ -13,12 +13,3 @@ com a implementação de um banco de dados.
   Durante o desenvolvimento do CRUD do professor não enfrentamos grandes problemas pois optamos pelo caminho
 mais simples (armazenamento em listas) e como tinhamos uma ideia estruturada de como desennvolver o CRUD,
 só foi necessário "traduzir" ela para python.
-
-17/03/2025 -
-Após a nossa análise inicial, começamos a colocar as ideias em prática para o desenvolvimento da API. Decidimos 
-usar o Blueprint do Flask para estruturar melhor o código. Acreditamos que, com ele, a aplicação ficará mais organizada, 
-permitindo que a gente separe as funcionalidades em módulos e facilitando a expansão conforme o projeto evolui ao longo do semestre.
-
-Por enquanto, estamos armazenando os dados em listas na memória do servidor, com IDs gerados automaticamente para cada entidade. Claro que 
-isso traz um problema: sempre que o servidor for reiniciado, os dados serão apagados. Mas, para essa fase inicial do projeto, 
-isso não é um grande empecilho. No futuro, planejamos implementar um banco de dados para resolver essa questão de persistência.
