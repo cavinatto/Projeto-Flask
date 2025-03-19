@@ -35,7 +35,6 @@ Esta API permite gerenciar alunos, professores e turmas de uma escola de forma s
 |---------|---------------------|------------|
 | GET     | `/alunos`           | Retorna todos os alunos |
 | POST    | `/alunos`           | Cria um novo aluno |
-| GET     | `/alunos/<id>`      | Retorna um aluno pelo ID |
 | PUT     | `/alunos/<id>`      | Atualiza um aluno |
 | DELETE  | `/alunos/<id>`      | Remove um aluno |
 
