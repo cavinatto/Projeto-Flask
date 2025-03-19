@@ -149,6 +149,31 @@ def test_delete_aluno(client):
     client.post('/professores', json={"nome": "Carlos Silva"})
     client.post('/turmas', json={"nome": "Matemática", "professor_id": 1})
     client.post('/alunos', json={"nome": "João", "turma_id": 1})
+
+    # TESTE 1: Verifica se a listagem de alunos vazia retorna um array vazio
+def test_listar_alunos_vazia(client):
+    global alunos
+    alunos.clear()
+    resposta = client.get('/alunos')
+    assert resposta.status_code == 200
+    assert resposta.json == []
+
+# TESTE 2: Atualizar um professor inexistente deve retornar erro
+def test_atualizar_professor_inexistente(client):
+    global professores
+    professores.clear()
+    resposta = client.put('/professores/99', json={"nome": "Inexistente"})
+    assert resposta.status_code == 400
+    assert resposta.json == {"erro": "professor nao encontrado"}
+
+# TESTE 3: Criar uma turma com um professor que não existe deve falhar
+def test_criar_turma_com_professor_invalido(client):
+    global turmas
+    turmas.clear()
+    resposta = client.post('/turmas', json={"nome": "História", "professor_id": 99})
+    assert resposta.status_code == 400
+    assert resposta.json == {"erro": "professor nao encontrado"}
+
     resposta = client.delete('/alunos/1')
 
     assert resposta.status_code == 200
