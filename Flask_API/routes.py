@@ -19,14 +19,16 @@ def add_professor():
 def get_professores():
     return jsonify(professores)
 
-@bp.route('/professores/<int:professor_id>', methods=['PUT'])
-def update_professor(professor_id):
-    data = request.json
+@bp.route('/professores/<int:id>', methods=['PUT'])
+def atualizar_professor(id):
     for professor in professores:
-        if professor["id"] == professor_id:
-            professor["nome"] = data["nome"]
+        if professor["id"] == id:
+            dados = request.get_json()
+            if "nome" not in dados:
+                return jsonify({"erro": "professor sem nome"}), 400
+            professor["nome"] = dados["nome"]
             return jsonify(professor)
-    return jsonify({"erro": "Professor não encontrado"}), 404
+    return jsonify({"erro": "professor nao encontrado"}), 400
 
 @bp.route('/professores/<int:professor_id>', methods=['DELETE'])
 def delete_professor(professor_id):
@@ -40,9 +42,17 @@ def get_turmas():
     return jsonify(turmas)
 
 @bp.route('/turmas', methods=['POST'])
-def add_turma():
-    data = request.json
-    nova_turma = {"id": len(turmas) + 1, "nome": data["nome"], "professor_id": data["professor_id"]}
+def criar_turma():
+    dados = request.get_json()
+    if "nome" not in dados or "professor_id" not in dados:
+        return jsonify({"erro": "dados incompletos"}), 400
+    professor_existe = any(prof["id"] == dados["professor_id"] for prof in professores)
+    if not professor_existe:
+        return jsonify({"erro": "professor nao encontrado"}), 400
+    nova_turma = {
+        "id": len(turmas) + 1,
+        "nome": dados["nome"],
+        "professor_id": dados["professor_id"]}
     turmas.append(nova_turma)
     return jsonify(nova_turma), 201
 
