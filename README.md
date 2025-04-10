@@ -1,6 +1,6 @@
 # API de Gerenciamento Escolar
 
-Esta API foi desenvolvida para facilitar o gerenciamento de uma instituição de ensino, oferecendo endpoints organizados para cadastrar, consultar, atualizar e remover alunos, professores e turmas. É ideal para integrar com sistemas escolares ou ser usada como base em projetos de aprendizado com Flask e Python.
+Esta API foi desenvolvida com o framework Flask utilizando o padrão arquitetural MVC (Model-View-Controller) para organizar de forma clara e escalável a lógica de negócio, rotas e estrutura de dados. Ela permite gerenciar alunos, professores e turmas de uma escola por meio de endpoints RESTful, oferecendo funcionalidades completas de cadastro, consulta, atualização e exclusão (CRUD).
 
 
 ## Tecnologias Utilizadas
