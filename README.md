@@ -1,6 +1,6 @@
 # API de Gerenciamento Escolar
 
-Esta API permite gerenciar alunos, professores e turmas de uma escola de forma simples.
+Esta API foi desenvolvida para facilitar o gerenciamento de uma instituição de ensino, oferecendo endpoints organizados para cadastrar, consultar, atualizar e remover alunos, professores e turmas. É ideal para integrar com sistemas escolares ou ser usada como base em projetos de aprendizado com Flask e Python.
 
 
 ## Tecnologias Utilizadas
