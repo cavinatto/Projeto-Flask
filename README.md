@@ -7,7 +7,7 @@ Esta API foi desenvolvida com o framework Flask utilizando o padrão arquitetura
 - Python 3.11
 - Flask
 - Blueprints
-- Pytest
+- Pytest (Para testes unitários)
 
 
 ## Instalação
