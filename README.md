@@ -30,7 +30,7 @@ A API está disponível em produção em:
 ## 📥 Clonando o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone git clone -b Backup https://github.com/cavinatto/ProjetoFlask.git
 cd APIgpt
 docker-compose up --build
 ```
