@@ -1,75 +1,105 @@
-# API de Gerenciamento Escolar
+# API de Gestão Para Turmas
 
-Esta API foi desenvolvida com o framework Flask utilizando o padrão arquitetural MVC (Model-View-Controller) para organizar de forma clara e escalável a lógica de negócio, rotas e estrutura de dados. Ela permite gerenciar alunos, professores e turmas de uma escola por meio de endpoints RESTful, oferecendo funcionalidades completas de cadastro, consulta, atualização e exclusão (CRUD).
+![Deploy](https://img.shields.io/badge/deploy-render-green)
 
+Esta é uma API RESTful desenvolvida com Flask, utilizando MySQL como banco de dados, com suporte a Swagger (OpenAPI), Docker e deploy gratuito no Render (backend) e Railway (banco de dados).
 
-## Tecnologias Utilizadas
-- Python 3.11
-- Flask
-- Blueprints
-- Pytest (Para testes unitários)
+## 📚 Funcionalidades
 
+- CRUD de Alunos
+- CRUD de Professores
+- CRUD de Turmas
+- Documentação interativa via Swagger
 
-## Instalação
+## 🚀 Deploy
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/cavinatto/Projeto-Flask
-   cd Projeto-Flask
-   ```
-2. Instale as dependências:
-   ```sh
-   pip install -r requirements.txt
-   ```
+A API está disponível em produção em:
 
-## Executando a API
+🔗 [https://projetoflask-pu4h.onrender.com/docs](https://projetoflask-pu4h.onrender.com/docs)
 
-1. Para iniciar o servidor Flask execute app.py ou rode o comando:
-   ```sh
-   python app.py
-   ```
+## ⚙️ Tecnologias
 
-2. A API estará disponível em: `http://127.0.0.1:5000/`
+- Python 3.9
+- Flask 3.1
+- Flask-RestX
+- Flask-SQLAlchemy
+- PyMySQL
+- Docker
+- MySQL (Local)
 
+## 📥 Clonando o projeto
 
-## Endpoints
-
-### Alunos
-
-| Método | Rota                | Descrição |
-|---------|---------------------|------------|
-| GET     | `/alunos`           | Retorna todos os alunos |
-| GET     | `/alunos/<id>`      | Retorna um aluno específico |
-| POST    | `/alunos`           | Cria um novo aluno |
-| PUT     | `/alunos/<id>`      | Atualiza um aluno |
-| DELETE  | `/alunos/<id>`      | Remove um aluno |
-
-### Professores
-
-| Método | Rota                | Descrição |
-|---------|---------------------|------------|
-| GET     | `/professores`      | Retorna todos os professores |
-| GET     | `/professores/<id>` | Retorna um professor específico |
-| POST    | `/professores`      | Cria um novo professor |
-| PUT     | `/professores/<id>` | Atualiza um professor |
-| DELETE  | `/professores/<id>` | Remove um professor |
-
-### Turmas
-
-| Método | Rota            | Descrição |
-|---------|---------------|------------|
-| GET     | `/turmas`     | Retorna todas as turmas |
-| GET     | `/turmas/<id>`| Retorna uma turma específica |
-| POST    | `/turmas`     | Cria uma nova turma |
-| PUT     | `/turmas/<id>` | Atualiza uma turma |
-| DELETE  | `/turmas/<id>` | Remove uma turma |
-
-## Testando a API
-
-Para rodar os testes unitários, utilize:
-
-```sh
-python -m pytest
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd APIgpt
+docker-compose up --build
 ```
 
-Isso executa uma série de testes para validar o funcionamento correto da API.
+## 🐋 Executando localmente com Docker
+
+```bash
+docker-compose up --build
+```
+
+- Swagger: [http://localhost:8000/docs](http://localhost:8000/docs)
+- Endpoints: por exemplo, [http://localhost:8000/api/professores](http://localhost:8000/api/professores)
+
+## 🧪 Rodando os testes
+
+```bash
+python -m unittest discover tests
+```
+
+## 📂 Estrutura do Projeto
+
+```bash
+APIgpt/
+│
+├── alunos/
+│   ├── alunos_model.py
+│   └── alunos_routes.py
+│
+├── professores/
+│   ├── professores_model.py
+│   └── professores_routes.py
+│
+├── turmas/
+│   ├── turmas_model.py
+│   └── turmas_routes.py
+│
+├── swagger/
+│   ├── namespaces/
+│   │   ├── aluno_namespace.py
+│   │   ├── professor_namespace.py
+│   │   └── turma_namespace.py
+│   ├── swagger_config.py
+│   └── __init__.py
+│
+├── tests/
+│   ├── test_aluno.py
+│   ├── test_professor.py
+│   └── test_turma.py
+│
+├── config.py
+├── app.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── entrypoint.sh
+```
+
+## 📝 Observações
+
+- Em produção, o banco de dados é fornecido pelo Railway.
+- Em ambiente local, o banco é iniciado via `docker-compose` com MySQL 5.7.
+- Certifique-se de criar um arquivo `.env` com suas variáveis locais se necessário.
+
+```env
+# .env (exemplo)
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=1234
+DB_NAME=escola
+```
+
+---
