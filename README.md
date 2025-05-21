@@ -7,7 +7,7 @@ Esta API foi desenvolvida com o framework Flask utilizando o padrão arquitetura
 - Python 3.11
 - Flask
 - Blueprints
-- Pytest (Para testes unitários)
+- Unittest (Para testes unitários)
 
 
 ## Instalação
@@ -69,7 +69,7 @@ Esta API foi desenvolvida com o framework Flask utilizando o padrão arquitetura
 Para rodar os testes unitários, utilize:
 
 ```sh
-python -m pytest
+python test_routes.py
 ```
 
 Isso executa uma série de testes para validar o funcionamento correto da API.
