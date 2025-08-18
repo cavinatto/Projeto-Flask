@@ -10,6 +10,7 @@ Esta é uma API RESTful desenvolvida com Flask, utilizando MySQL como banco de d
 - CRUD de Professores
 - CRUD de Turmas
 - Documentação interativa via Swagger
+- Arquitetura MVC
 
 ## 🚀 Deploy
 
